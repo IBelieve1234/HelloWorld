@@ -1,0 +1,18 @@
+#include"Delete_redundant_information.h"
+
+void Delete_redundant_information(string file_position){
+    fstream getfile;
+    getfile.open(file_position,ios::in);
+    string temp;
+    int num=0;
+    if(getfile.fail())
+        return ;
+    else{
+        while(!getfile.eof()) {
+            getline(getfile,temp);
+            num++;
+        }
+        getfile.close();
+    }
+    cout<<num;
+}
